@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="base1Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'base1.dbo.usuarios' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="usuarios">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="clave" Type="nvarchar" MaxLength="30" />
+    <Property Name="mail" Type="nvarchar" MaxLength="70" />
+    <Property Name="nombre" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityContainer Name="base1ModelStoreContainer">
+    <EntitySet Name="usuarios" EntityType="Self.usuarios" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [usuarios].[id] AS [id], 
+    [usuarios].[clave] AS [clave], 
+    [usuarios].[mail] AS [mail], 
+    [usuarios].[nombre] AS [nombre]
+    FROM [dbo].[usuarios] AS [usuarios]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

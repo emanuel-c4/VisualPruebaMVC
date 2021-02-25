@@ -1,0 +1,24 @@
+﻿
+@{
+    ViewBag.Title = "prueba";
+
+}
+
+<h2>prueba</h2>
+<h3>@ViewBag.Message</h3>
+<h3>@ViewData["Nombre"]</h3>
+
+<ul>
+    @for (int i = 0; i < (int)ViewData["NumVeces"]; i++)
+    {
+        <li>@ViewData["Nombre"]</li>
+    }
+</ul>
+
+<hr />
+<ul>
+    @for (int i = 0; i < ViewBag.NumTimes; i++)
+    {
+        <li>@ViewBag.Message</li>
+    }
+</ul>
